@@ -16,6 +16,7 @@ body{
   position: fixed;
   justify-content: space-between;
   background-color: #3b5998;
+  z-index: 100;
 }
 .context {
   width: 100%;
@@ -129,28 +130,10 @@ body{
     border-radius: 50%;
   }
 }
-
 .contentImage {
-  height: 200vh;
+  height: 50vh;
   background-size: auto;
   background-color: #182e70;
-}
-.customNavbar {
-  position: page;
-  top: 10vh;
-  width: 100%;
-  text-align: center;
-}
-.customNavbar button {
-  color: white;
-  background-color: #3b5998;
-  border: none;
-  border-radius: 12px;
-  margin-right: 5px;
-
-}
-.customNavbar button:hover {
-  background-color: #c13584;
 }
 .GCDClass {
   position: page;
@@ -161,6 +144,7 @@ body{
   font-weight: bold;
 }
 .GCDform {
+  position: page;
   font-size: 20px ;
   min-width: 50%;
   width: 50%;
@@ -187,5 +171,11 @@ body{
 .mat-form-field {
   padding: 10px;
 }
-
-
+.projects {
+  position: static;
+  background-color: #182e70;
+  height: 150vh;
+}
+img {
+  background-size: cover ;
+}

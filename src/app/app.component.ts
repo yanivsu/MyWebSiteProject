@@ -14,18 +14,19 @@ export class AppComponent{
   GCDAnswer: number = 0;
   GCDu:number = 0;
   GCDv:number = 0;
+  scrollNumber: number;
+  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
   // When we scroll down the page
   @HostListener("window:scroll", [])
   onWindowScroll() {
     const number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this.scrollNumber = number;
+    console.log(this.scrollNumber);
     if (number > 20) {
       this.color = '#0275d8';
     } else if (number < 100) {
       this.color = '#182e70';
     }
-  }
-  myFunc() {
-    console.log('Clicked!');
   }
   ScrollDown(value: string) {
     let el = document.getElementById(value); // Get Value by ID
@@ -67,5 +68,5 @@ export class AppComponent{
       this.GCDv = signY * y;
     }
 
-    }
+  }
 }

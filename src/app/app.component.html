@@ -1,8 +1,6 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
 <div class="context">
-  <h1>Welcome To Yaniv Suriyano's WebSite</h1>
+  <h1 class="animated bounceInDown delay-0s">Welcome To Yaniv Suriyano's WebSite</h1>
 </div>
 <div class="area">
   <ul class="circles">
@@ -18,7 +16,7 @@
     <li></li>
   </ul>
   <mat-toolbar class="navbarMenu" [ngStyle]="{ 'background-color':color }">
-    <div style="color: white">Yaniv Suriyano :)</div>
+    <div style="color: white">My App :)</div>
     <div>
         <span>
           <a href="https://www.instagram.com/yanivsu/" target="_blank">
@@ -30,26 +28,27 @@
             <i class="fa fa-facebook-official" matTooltip="Please Follow me on Facebook"></i>
           </a>
         </span>
-        <button mat-icon-button [matMenuTriggerFor]="menu" style="background: none;margin-left: 4px; border: none ">
-          <mat-icon>more_vert</mat-icon>
+      <button mat-icon-button [matMenuTriggerFor]="menu" style="background: none;margin-left: 4px; border: none ">
+        <mat-icon style="color: white">more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="ScrollDown('GCD')">
+          <mat-icon>memory</mat-icon>
+          <span>GCD calculator</span>
         </button>
-        <mat-menu #menu="matMenu">
-           <button mat-menu-item (click)="ScrollDown('GCD')">
-             <mat-icon>memory</mat-icon>
-             <span>GCD calculator</span>
-           </button>
-           <button mat-menu-item disabled>
-             <mat-icon>voicemail</mat-icon>
-             <span>Check voice mail</span>
-           </button>
-           <button mat-menu-item>
-             <mat-icon>notifications_off</mat-icon>
-             <span>Disable alerts</span>
-           </button>
-        </mat-menu>
+        <button mat-menu-item (click)="ScrollDown('myProjects')">
+          <mat-icon>fingerprint icon</mat-icon>
+          <span>My Projects</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>face icon</mat-icon>
+          <span>My CV</span>
+        </button>
+      </mat-menu>
     </div>
   </mat-toolbar>
 </div>
+
 <div class="contentImage">
   <div id="GCD" class="GCDClass">
     <span id="GCDCal">GCD Calculator</span>
@@ -74,10 +73,63 @@
     </div>
   </div>
 </div>
+<div id="myProjects" class="projects"><br><br>
+  <div style="text-align: center">
+        <span *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s"
+              style="color: whitesmoke;font-size: 60px;font-weight: bold; text-decoration: underline">Projects :
+        </span>
+  </div>
+  <div class="row" style="width: 100%">
+    <div class="col-6" style="text-align: center;padding: 150px">
+      <div *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s"
+           style="color: whitesmoke; text-decoration: underline">Lotem's Website:
+      </div>
+      <p class="lotemsDescription" style="color: whitesmoke">The website is a tennis equipment and gear website (an
+        existing physical store), in the website customers are able to view all the store's equipment and to make
+        orders, and even track an existing order.
+        Furthermore, the website's administrator (the store's owner) can control existing orders, add new gear and edit
+        existing gear on the website. </p>
+      <a style="color:whitesmoke; float: left" href="http://www.github.com/yanivsu/Lotems_Store" target="_blank">
+        <mat-icon>language</mat-icon>
+        GitHub</a>
+      <a style="color:whitesmoke;float: right" href="http://lotemweb.herokuapp.com" target="_blank">
+        <mat-icon style="margin-top: 2px">language</mat-icon>
+        LotemsWeb</a>
+    </div>
+    <div class="col-6" style="color: whitesmoke;padding: 150px;text-align: center;text-decoration: underline">
+      Images:
+      <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[0]" alt="Random first slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[1]" alt="Random second slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[2]" alt="Random third slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
 
-
-
-
-
+  </div>
+</div>
 
 

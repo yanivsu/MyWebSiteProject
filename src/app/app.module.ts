@@ -11,8 +11,9 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatMenuModule} from "@angular/material/menu";
-import {MatIconModule} from '@angular/material/icon';
+import { MatMenuModule } from "@angular/material/menu";
+import { MatIconModule } from '@angular/material/icon';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
+    NgbModule,
     _MatMenuDirectivesModule,
     MatTooltipModule,
     MatInputModule,
