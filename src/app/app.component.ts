@@ -13,7 +13,7 @@ export class AppComponent{
   missValue = false;
   result:boolean = false;
   GCDAnswer: number = 0;
-  GCDu:number = -1;
+  GCDu:number = 0;
   GCDv:number = 0;
   scrollNumber: number;
   imagesLotemWeb = ['https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Admin%20User.jpg',
