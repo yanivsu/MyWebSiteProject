@@ -22,6 +22,11 @@ export class AppComponent{
     'https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Register.jpg',
     'https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Registered%20User%20.jpg',
     'https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Registered%20User%20-%20Cart%20.jpg'];
+  imageViewWebShare = ['../assets/LoginPage.jpg',
+  '../assets/HomePage.jpg',
+  '../assets/Countires.jpg',
+  '../assets/IMG.jpg'];
+  cv = '../assets/CV.pdf';
   // When we scroll down the page
   @HostListener("window:scroll", [])
   onWindowScroll() {
@@ -73,6 +78,11 @@ export class AppComponent{
       this.GCDu = signX * x;
       this.GCDv = signY * y;
     }
+
+  }
+
+  downloadFunc() {
+    console.log('Send Request to server...');
 
   }
 }

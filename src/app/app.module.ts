@@ -14,6 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from '@angular/material/icon';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {PdfViewerModule} from "ng2-pdf-viewer";
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
   ],
   imports: [
     BrowserModule,
+    PdfViewerModule,
     FlexLayoutModule,
     MatSliderModule,
     BrowserAnimationsModule,

@@ -1,6 +1,6 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="context">
-  <h1 class="animated bounceInDown delay-0s">Welcome To Yaniv Suriyano's WebSite</h1>
+  <h1 class=" mat-display-1 animated bounceInDown delay-0s">Welcome To Yaniv Suriyano's WebSite</h1>
 </div>
 
 <div class="area">
@@ -43,7 +43,7 @@
         <mat-icon style="color: white">more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="ScrollDown('GCD')">
+        <button  mat-menu-item (click)="ScrollDown('GCD')">
           <mat-icon>memory</mat-icon>
           <span>GCD calculator</span>
         </button>
@@ -51,7 +51,7 @@
           <mat-icon>fingerprint icon</mat-icon>
           <span>My Projects</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="ScrollDown('myCV')">
           <mat-icon>face icon</mat-icon>
           <span>My CV</span>
         </button>
@@ -87,7 +87,7 @@
 <div id="myProjects" class="projects"><br><br>
   <div style="text-align: center">
         <span *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s"
-              style="color: whitesmoke;font-size: 60px;font-weight: bold; text-decoration: underline">Projects :
+              mat-display-1 style="color: whitesmoke;font-size: 60px;font-weight: bold; text-decoration: underline">Projects :
         </span>
   </div>
   <div class="row" style="width: 100%">
@@ -102,7 +102,9 @@
         existing physical store), in the website customers are able to view all the store's equipment and to make
         orders, and even track an existing order.
         Furthermore, the website's administrator (the store's owner) can control existing orders, add new gear and edit
-        existing gear on the website. </p>
+        existing gear on the website.<br>
+        Client Side (Angular) , Server Side (NodeJS, MongoDb)
+      </p>
       <a *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s" style="color:whitesmoke; float: left"
          href="http://www.github.com/yanivsu/Lotems_Store" target="_blank">
         <mat-icon>language</mat-icon>
@@ -123,10 +125,60 @@
         </ng-template>
       </ngb-carousel>
     </div>
-
   </div>
   <hr style="border: 1px solid whitesmoke; width: 90%;margin: 0 auto">
+  <div class="row" style="width: 100%">
+    <div class="col-5" style="text-align: left;padding: 150px;">
+      <div *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s"
+           style="color: whitesmoke;
+           text-decoration: underline;
+           ">ViewPointShare:
+      </div>
+      <p *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s lotemsDescription" style="color: whitesmoke">The
+
+        The purpose of a website is to store images, view landscapes from all over the world.
+        Users who register for the site can also download the images they viewed in full quality and storage on the computer.<br>
+        Client Side (HTML,CSS,HBS) , Server Side (NodeJS, MongoDb)
+      </p>
+      <a *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s" style="color:whitesmoke; float: left"
+         href="http://www.github.com/yanivsu/ViewShareWeb" target="_blank">
+        <mat-icon>language</mat-icon>
+        GitHub</a>
+    </div>
+    <div class="col-7 animated fadeIn delay-0.9s"
+         style="color: whitesmoke;padding: 150px;text-align: center;text-decoration: underline"
+         *ngIf="scrollNumber > 590">
+      <ngb-carousel *ngIf="imageViewWebShare">
+        <ng-template *ngFor="let item of imageViewWebShare" ngbSlide style="color: black">
+          <div class="picsum-img-wrapper">
+            <img [src]="item">
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+  <hr style="border: 1px solid whitesmoke; width: 90%;margin: 0 auto">
+
+  <div style="text-align: center" id="myCV"><br><br>
+        <span *ngIf="scrollNumber > 2050" class="animated fadeIn delay-0.9s"
+               style="color: whitesmoke;font-size: 60px;font-weight: bold; text-decoration: underline">My CV:
+        </span>
+    <pdf-viewer src="{{cv}}" [zoom]="1.1"></pdf-viewer>
+  </div>
+  <div style="text-align: center">
+    <a download="CV.pdf" target="_blank" href="../assets/CV.pdf">
+      <mat-icon style="color: whitesmoke;
+              font-size: 55px;
+              cursor: pointer;"
+                *ngIf="scrollNumber > 3320"
+                class="animated fadeIn delay-0.9s"
+                title='Download' >
+        cloud_download
+      </mat-icon>
+    </a>
+  </div>
 </div>
+
 
 
 
