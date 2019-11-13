@@ -1,4 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
+import '../assets/css/styles.css';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
