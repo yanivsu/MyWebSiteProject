@@ -15,7 +15,13 @@ export class AppComponent{
   GCDu:number = 0;
   GCDv:number = 0;
   scrollNumber: number;
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  imagesLotemWeb = ['https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Admin%20User.jpg',
+    'https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Admin%20User%20-%20Order%20Handler.jpg',
+    'https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Admin%20User%20-%20Edit%20Item.jpg',
+    'https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Guest%20User.jpg',
+    'https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Register.jpg',
+    'https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Registered%20User%20.jpg',
+    'https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Registered%20User%20-%20Cart%20.jpg'];
   // When we scroll down the page
   @HostListener("window:scroll", [])
   onWindowScroll() {

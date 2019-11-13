@@ -2,6 +2,7 @@
 <div class="context">
   <h1 class="animated bounceInDown delay-0s">Welcome To Yaniv Suriyano's WebSite</h1>
 </div>
+
 <div class="area">
   <ul class="circles">
     <li></li>
@@ -16,7 +17,7 @@
     <li></li>
   </ul>
   <mat-toolbar class="navbarMenu" [ngStyle]="{ 'background-color':color }">
-    <div style="color: white">My App :)</div>
+    <div style="color: white">Yaniv Suriyano</div>
     <div>
         <span>
           <a href="https://www.instagram.com/yanivsu/" target="_blank">
@@ -28,6 +29,16 @@
             <i class="fa fa-facebook-official" matTooltip="Please Follow me on Facebook"></i>
           </a>
         </span>
+      <span>
+        <a href="https://www.linkedin.com/in/yaniv-suriyano-9153bb140/" target="_blank">
+          <i class="fa fa-linkedin" matTooltip="Please Follow me on Linkedin"></i>
+        </a>
+      </span>
+      <span>
+        <a href="https://www.github.com/yanivsu" target="_blank">
+          <i style="color: black "class="fa fa-github" matTooltip="Please Follow me on Github"></i>
+        </a>
+      </span>
       <button mat-icon-button [matMenuTriggerFor]="menu" style="background: none;margin-left: 4px; border: none ">
         <mat-icon style="color: white">more_vert</mat-icon>
       </button>
@@ -80,56 +91,44 @@
         </span>
   </div>
   <div class="row" style="width: 100%">
-    <div class="col-6" style="text-align: center;padding: 150px">
+    <div class="col-5" style="text-align: left;padding: 150px;">
       <div *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s"
-           style="color: whitesmoke; text-decoration: underline">Lotem's Website:
+           style="color: whitesmoke;
+           text-decoration: underline;
+           ">Lotem's Website:
       </div>
-      <p class="lotemsDescription" style="color: whitesmoke">The website is a tennis equipment and gear website (an
+      <p *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s lotemsDescription" style="color: whitesmoke">The
+        website is a tennis equipment and gear website (an
         existing physical store), in the website customers are able to view all the store's equipment and to make
         orders, and even track an existing order.
         Furthermore, the website's administrator (the store's owner) can control existing orders, add new gear and edit
         existing gear on the website. </p>
-      <a style="color:whitesmoke; float: left" href="http://www.github.com/yanivsu/Lotems_Store" target="_blank">
+      <a *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s" style="color:whitesmoke; float: left"
+         href="http://www.github.com/yanivsu/Lotems_Store" target="_blank">
         <mat-icon>language</mat-icon>
         GitHub</a>
-      <a style="color:whitesmoke;float: right" href="http://lotemweb.herokuapp.com" target="_blank">
+      <a *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s" style="color:whitesmoke;float: right"
+         href="http://lotemweb.herokuapp.com" target="_blank">
         <mat-icon style="margin-top: 2px">language</mat-icon>
         LotemsWeb</a>
     </div>
-    <div class="col-6" style="color: whitesmoke;padding: 150px;text-align: center;text-decoration: underline">
-      Images:
-      <ngb-carousel *ngIf="images">
-        <ng-template ngbSlide>
+    <div class="col-7 animated fadeIn delay-0.9s"
+         style="color: whitesmoke;padding: 150px;text-align: center;text-decoration: underline"
+         *ngIf="scrollNumber > 590">
+      <ngb-carousel *ngIf="imagesLotemWeb">
+        <ng-template *ngFor="let item of imagesLotemWeb" ngbSlide style="color: black">
           <div class="picsum-img-wrapper">
-            <img [src]="images[0]" alt="Random first slide">
-          </div>
-          <div class="carousel-caption">
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img [src]="images[1]" alt="Random second slide">
-          </div>
-          <div class="carousel-caption">
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img [src]="images[2]" alt="Random third slide">
-          </div>
-          <div class="carousel-caption">
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <img [src]="item">
           </div>
         </ng-template>
       </ngb-carousel>
     </div>
 
   </div>
+  <hr style="border: 1px solid whitesmoke; width: 90%;margin: 0 auto">
 </div>
+
+
+
 
 
