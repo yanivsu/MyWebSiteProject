@@ -184,7 +184,8 @@ img {
 .carousel-control-prev {
   filter: invert(100%);
 }
-ng2-pdf-viewer{
-  height: 25px;
+pdf-viewer {
+  display: block;
+  height: 140vh !important;
 }
 
