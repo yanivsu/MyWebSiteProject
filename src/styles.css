@@ -184,8 +184,7 @@ img {
 .carousel-control-prev {
   filter: invert(100%);
 }
-.ng2-pdf-viewer-container[_ngcontent-ktp-c6] {
-  overflow-x: auto;
-  position: relative;
-  height: 110vh;
+ng2-pdf-viewer{
+  height: 25px;
 }
+
