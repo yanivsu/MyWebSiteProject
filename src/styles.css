@@ -174,7 +174,7 @@ body{
 .projects {
   position: static;
   background-color: #182e70;
-  height: 320vh;
+  height: 420vh;
 }
 img {
   max-width: 100%;
@@ -186,12 +186,13 @@ img {
 }
 pdf-viewer {
   display: block;
-  height: 140vh !important;
+  height: 180vh !important;
 }
 .ng2-pdf-viewer-container[_ngcontent-ysf-c6] {
   overflow-x: auto;
+  overflow-y: auto;
   position: relative;
-   height: 1vh !important;
+  height: 1vh !important;
   max-height: 1vh !important;
 }
 
