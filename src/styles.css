@@ -188,4 +188,10 @@ pdf-viewer {
   display: block;
   height: 140vh !important;
 }
+.ng2-pdf-viewer-container[_ngcontent-ysf-c6] {
+  overflow-x: auto;
+  position: relative;
+   height: 1vh !important;
+  max-height: 1vh !important;
+}
 
