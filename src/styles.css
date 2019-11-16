@@ -184,4 +184,14 @@ img {
 .carousel-control-prev {
   filter: invert(100%);
 }
+.fa {
+  font-size: 2rem;
+  margin: 1rem;
+}
+.fa-facebook-official {
+  color: #3b5998;
+}
+.fa-instagram {
+  color: #c13584;
+}
 
