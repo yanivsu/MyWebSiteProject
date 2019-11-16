@@ -15,6 +15,7 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from '@angular/material/icon';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {PdfViewerModule} from "ng2-pdf-viewer";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {PdfViewerModule} from "ng2-pdf-viewer";
     _MatMenuDirectivesModule,
     MatTooltipModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
