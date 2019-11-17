@@ -31,6 +31,14 @@ export class AppComponent{
   onWindowScroll() {
     const number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.scrollNumber = number;
+    console.log(this.scrollNumber);
+    if(number > 249 && this.whereAmI != 1) {
+      this.whereAmI = 1;
+    }  if (number > 899 && this.whereAmI != 2) {
+      this.whereAmI = 2;
+    }  if (number > 2345 && this.whereAmI != 3) {
+      this.whereAmI = 3;
+    }
     if (number > 20) {
       this.color = '#0275d8';
     } else if (number < 100) {
