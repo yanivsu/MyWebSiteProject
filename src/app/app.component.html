@@ -20,37 +20,37 @@
     <div>
         <span>
           <a href="https://www.instagram.com/yanivsu/" target="_blank">
-            <i class="fa fa-instagram" matTooltip="Please Follow me on Instagram"></i>
+            <i class="fa fa-instagram" matTooltip="Follow me on Instagram"></i>
           </a>
         </span>
       <span>
           <a href="https://www.facebook.com/yaniv.suriyano" target="_blank">
-            <i class="fa fa-facebook-official" matTooltip="Please Follow me on Facebook"></i>
+            <i class="fa fa-facebook-official" matTooltip="Follow me on Facebook"></i>
           </a>
         </span>
       <span>
         <a href="https://www.linkedin.com/in/yaniv-suriyano-9153bb140/" target="_blank">
-          <i class="fa fa-linkedin" matTooltip="Please Follow me on Linkedin"></i>
+          <i class="fa fa-linkedin" matTooltip="Follow me on Linkedin"></i>
         </a>
       </span>
       <span>
         <a href="https://www.github.com/yanivsu" target="_blank">
-          <i style="color: black "class="fa fa-github" matTooltip="Please Follow me on Github"></i>
+          <i style="color: black "class="fa fa-github" matTooltip="Follow me on Github"></i>
         </a>
       </span>
       <button mat-icon-button [matMenuTriggerFor]="menu" style="background: none;margin-left: 4px; border: none ">
         <mat-icon style="color: white; margin-bottom: 8px">more_vert</mat-icon>
       </button>
-      <mat-menu #menu="matMenu">
-        <button  mat-menu-item (click)="ScrollDown('GCD')">
+      <mat-menu #menu="matMenu" >
+        <button mat-menu-item [ngStyle]="{'background-color': whereAmI == 1 ? '#FD5D93' : 'white' }" (click)="ScrollDown('GCD',1)">
           <mat-icon>memory</mat-icon>
           <span>GCD calculator</span>
         </button>
-        <button mat-menu-item (click)="ScrollDown('myProjects')">
+        <button mat-menu-item  [ngStyle]="{'background-color': whereAmI == 2 ? '#FD5D93' : 'white' }" (click)="ScrollDown('myProjects',2)">
           <mat-icon>fingerprint icon</mat-icon>
           <span>My Projects</span>
         </button>
-        <button mat-menu-item (click)="ScrollDown('myCV')">
+        <button mat-menu-item [ngStyle]="{'background-color': whereAmI == 3 ? '#FD5D93' : 'white' }" (click)="ScrollDown('myCV', 3)">
           <mat-icon>face icon</mat-icon>
           <span>My CV</span>
         </button>

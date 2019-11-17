@@ -8,6 +8,7 @@ export class AppComponent{
   title = 'MyWebSiteProject';
   color = '#182e70'; // Default Color
   missValue = false;
+  whereAmI:number = 0;
   result:boolean = false;
   GCDAnswer: number = 0;
   GCDu:number = -1;
@@ -36,9 +37,12 @@ export class AppComponent{
       this.color = '#182e70';
     }
   }
-  ScrollDown(value: string) {
+
+  ScrollDown(value: string, number: number) {
     let el = document.getElementById(value); // Get Value by ID
+    this.whereAmI = number; //Update the number
     el.scrollIntoView(); // Scroll to view
+
   }
   // convenience getter for easy access to form fields
   GCDCalcuator(number1: string, number2: string) {

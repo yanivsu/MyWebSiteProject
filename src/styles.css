@@ -195,4 +195,6 @@ pdf-viewer {
   height: 1vh !important;
   max-height: 1vh !important;
 }
-
+.mat-menu-item {
+  outline: none !important;
+}
