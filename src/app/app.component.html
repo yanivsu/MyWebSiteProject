@@ -63,7 +63,7 @@
   <div id="GCD" class="GCDClass">
     <span id="GCDCal">GCD Calculator</span>
     <div class="container grid-container">
-      <form class="GCDform">
+      <form class="GCDform" (change)="GCDCalcuator(number1.value,number2.value)">
         <mat-form-field>
           <input matInput type="number" #number1 required>
           <mat-placeholder class="placeholder">First Integer:</mat-placeholder>
@@ -72,7 +72,6 @@
           <input number matInput type="number" #number2 required>
           <mat-placeholder class="placeholder">Second Integer:</mat-placeholder>
         </mat-form-field>
-        <button type="button" class="btn btn-primary" (click)="GCDCalcuator(number1.value, number2.value)">Go!</button>
       </form>
       <br>
       <div *ngIf="missValue">

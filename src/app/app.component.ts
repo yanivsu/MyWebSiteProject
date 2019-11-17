@@ -45,12 +45,10 @@ export class AppComponent{
       this.color = '#182e70';
     }
   }
-
   ScrollDown(value: string, number: number) {
     let el = document.getElementById(value); // Get Value by ID
     this.whereAmI = number; //Update the number
     el.scrollIntoView(); // Scroll to view
-
   }
   // convenience getter for easy access to form fields
   GCDCalcuator(number1: string, number2: string) {
@@ -87,11 +85,6 @@ export class AppComponent{
       this.GCDu = signX * x;
       this.GCDv = signY * y;
     }
-
-  }
-
-  downloadFunc() {
-    console.log('Send Request to server...');
 
   }
 }
