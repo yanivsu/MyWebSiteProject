@@ -16,11 +16,13 @@ import { MatIconModule } from '@angular/material/icon';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import {MatButtonModule} from "@angular/material/button";
+import { ClockComponent } from './clock/clock.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule,
