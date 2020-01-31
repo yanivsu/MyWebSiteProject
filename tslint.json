@@ -25,6 +25,8 @@
       true,
       "rxjs/Rx"
     ],
+    "one-variable-per-declaration": [false],
+    "prefer-const": [false, {"destructuring": "all"}],
     "interface-name": false,
     "max-classes-per-file": false,
     "max-line-length": [

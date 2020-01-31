@@ -6,18 +6,17 @@ import {
   MatSliderModule,
   MatToolbarModule,
   MatTooltipModule
-} from "@angular/material";
+} from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatMenuModule } from "@angular/material/menu";
+import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import {PdfViewerModule} from "ng2-pdf-viewer";
-import {MatButtonModule} from "@angular/material/button";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {PdfViewerModule} from 'ng2-pdf-viewer';
+import {MatButtonModule} from '@angular/material/button';
 import { ClockComponent } from './clock/clock.component';
-
 
 @NgModule({
   declarations: [

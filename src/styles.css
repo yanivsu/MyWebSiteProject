@@ -131,7 +131,7 @@ body{
   }
 }
 .contentImage {
-  height: 50vh;
+  height: 100vh;
   background-size: auto;
   background-color: #182e70;
 }
@@ -186,7 +186,7 @@ img {
 }
 pdf-viewer {
   display: block;
-  height: 180vh !important;
+  height: 160vh !important;
 }
 .ng2-pdf-viewer-container[_ngcontent-ysf-c6] {
   overflow-x: auto;

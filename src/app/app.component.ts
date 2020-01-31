@@ -4,15 +4,17 @@ import {Component, HostListener, OnInit} from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
+export class AppComponent {
   title = 'MyWebSiteProject';
   color = '#182e70'; // Default Color
   missValue = false;
-  whereAmI:number = 0;
-  result:boolean = false;
-  GCDAnswer: number = 0;
-  GCDu:number = -1;
-  GCDv:number = 0;
+  gcdCal = false;
+  speedTest = false;
+  whereAmI = 0;
+  result = false;
+  GCDAnswer = 0;
+  GCDu = -1;
+  GCDv = 0;
   scrollNumber: number;
   imagesLotemWeb = ['https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Admin%20User.jpg',
     'https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Admin%20User%20-%20Order%20Handler.jpg',
@@ -27,16 +29,19 @@ export class AppComponent{
   '../assets/IMG.jpg'];
   cv = '../assets/CV.pdf';
   // When we scroll down the page
-  @HostListener("window:scroll", [])
+  @HostListener('window:scroll', [])
   onWindowScroll() {
+    // tslint:disable-next-line:variable-name
     const number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.scrollNumber = number;
     console.log(this.scrollNumber);
-    if(number > 249 && this.whereAmI != 1) {
+    if (number > 1006 && this.whereAmI !== 1) {
       this.whereAmI = 1;
-    }  if (number > 899 && this.whereAmI != 2) {
+    }
+    if (number > 2668 && this.whereAmI !== 2) {
       this.whereAmI = 2;
-    }  if (number > 2345 && this.whereAmI != 3) {
+    }
+    if (number > 3925 && this.whereAmI !== 3) {
       this.whereAmI = 3;
     }
     if (number > 20) {
@@ -45,9 +50,10 @@ export class AppComponent{
       this.color = '#182e70';
     }
   }
+  // tslint:disable-next-line:variable-name
   ScrollDown(value: string, number: number) {
-    let el = document.getElementById(value); // Get Value by ID
-    this.whereAmI = number; //Update the number
+    const el = document.getElementById(value); // Get Value by ID
+    this.whereAmI = number; //  Update the number
     el.scrollIntoView(); // Scroll to view
   }
   // convenience getter for easy access to form fields
@@ -56,10 +62,10 @@ export class AppComponent{
       this.missValue = true;
     } else {
       this.missValue = false;
-      let b = parseInt(number2);
-      let a = parseInt(number1);
+      let b = parseInt(number2, 10);
+      let a = parseInt(number1, 10);
       // Calculator Of GCD
-      var signX = (a < 0) ? -1 : 1,
+      let signX = (a < 0) ? -1 : 1,
         signY = (b < 0) ? -1 : 1,
         x = 0,
         y = 1,
@@ -85,6 +91,5 @@ export class AppComponent{
       this.GCDu = signX * x;
       this.GCDv = signY * y;
     }
-
   }
 }

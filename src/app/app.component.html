@@ -42,54 +42,31 @@
         <mat-icon style="color: white; margin-bottom: 8px">more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu" >
-        <button mat-menu-item [ngStyle]="{'background-color': whereAmI == 1 ? '#FD5D93' : 'white' }" (click)="ScrollDown('GCD',1)">
-          <mat-icon>memory</mat-icon>
-          <span>GCD calculator</span>
-        </button>
-        <button mat-menu-item  [ngStyle]="{'background-color': whereAmI == 2 ? '#FD5D93' : 'white' }" (click)="ScrollDown('myProjects',2)">
+        <button mat-menu-item  [ngStyle]="{'background-color': whereAmI == 1 ? '#FD5D93' : 'white' }" (click)="ScrollDown('myProjects',1)">
           <mat-icon>fingerprint icon</mat-icon>
           <span>My Projects</span>
         </button>
-        <button mat-menu-item [ngStyle]="{'background-color': whereAmI == 3 ? '#FD5D93' : 'white' }" (click)="ScrollDown('myCV', 3)">
+        <button mat-menu-item [ngStyle]="{'background-color': whereAmI == 2 ? '#FD5D93' : 'white' }" (click)="ScrollDown('myCV', 2)">
           <mat-icon>face icon</mat-icon>
           <span>My CV</span>
+        </button>
+        <button mat-menu-item [ngStyle]="{'background-color': whereAmI == 3 ? '#FD5D93' : 'white' }" (click)="ScrollDown('Tools',3)">
+          <mat-icon>build</mat-icon>
+          <span>Tools</span>
         </button>
       </mat-menu>
     </div>
   </mat-toolbar>
 </div>
-<div class="contentImage">
-  <div id="GCD" class="GCDClass">
-    <span id="GCDCal">GCD Calculator</span>
-    <div class="container grid-container">
-      <form class="GCDform" (change)="GCDCalcuator(number1.value,number2.value)">
-        <mat-form-field>
-          <input matInput type="number" #number1 required>
-          <mat-placeholder class="placeholder">First Integer:</mat-placeholder>
-        </mat-form-field>
-        <mat-form-field>
-          <input number matInput type="number" #number2 required>
-          <mat-placeholder class="placeholder">Second Integer:</mat-placeholder>
-        </mat-form-field>
-      </form>
-      <br>
-      <div *ngIf="missValue">
-        <span style="color: red; font-size: 17px">*</span>
-        <span style="color: white; font-size: 15px"> Please enter Numbers / Unsigned Numbers</span>
-      </div>
-      <div class="result" *ngIf="result">Result:<br> GCD:{{ GCDAnswer }} ,u:{{ GCDu }} ,v: {{ GCDv }}</div>
-    </div>
-  </div>
-</div>
 <div id="myProjects" class="projects"><br><br>
   <div style="text-align: center">
-        <span *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s"
+        <span *ngIf="scrollNumber > 550" class="animated fadeIn delay-0.5s"
               mat-display-1 style="color: whitesmoke;font-size: 60px;font-weight: bold; text-decoration: underline">Projects :
         </span>
   </div>
   <div class="row" style="width: 100%">
     <div class="col-5" style="text-align: left;padding: 150px;">
-      <div *ngIf="scrollNumber > 590" class="animated fadeIn delay-0.9s"
+      <div *ngIf="scrollNumber > 570" class="animated fadeIn delay-0.9s"
            style="color: whitesmoke;
            text-decoration: underline;
            ">Lotem's Website:
@@ -155,17 +132,43 @@
   </div>
   <hr style="border: 1px solid whitesmoke; width: 90%;margin: 0 auto">
   <div style="text-align: center" id="myCV"><br><br>
-        <span *ngIf="scrollNumber > 2050" class="animated fadeIn delay-0.9s"
+        <span *ngIf="scrollNumber > 1800"
                style="color: whitesmoke;font-size: 60px;font-weight: bold; text-decoration: underline">My CV:
         </span>
-    <pdf-viewer src="{{cv}}" [zoom]="1.1" [autoresize]="false"></pdf-viewer>
-    <h3 style="color: whitesmoke; text-decoration: underline">Vistor Counter:</h3>
-    <a href="https://www.freecounterstat.com" title="website hit counter"><img src="https://counter2.wheredoyoucomefrom.ovh/private/freecounterstat.php?c=zbbkzt32j3rzb8smb1numz5mfledf4ke"
-                                                                               title="website hit counter"
-                                                                               alt="website hit counter">
-    </a>
+    <pdf-viewer src="{{cv}}" [zoom]="1.4" [autoresize]="false"></pdf-viewer>
   </div>
+  <hr style="border: 1px solid whitesmoke; width: 90%;margin: 0 auto">
+  <div class="contentImage" id="Tools">
+    <div id="GCD" class="GCDClass">
+      <span style="color: whitesmoke;font-size: 60px;font-weight: bold; text-decoration: underline">Tools:</span><br><br>
+      <button type="button" class="btn btn-outline-primary" style="color: whitesmoke; margin: 2px 2px" (click)="gcdCal = !gcdCal">GCD Calculator</button>
+      <button type="button" class="btn btn-outline-primary" style="color: whitesmoke" (click)="speedTest = !speedTest">Speed Test</button>
+      <div *ngIf="gcdCal"><br>
+        <span id="GCDCal">GCD Calculator</span>
+        <div class="container grid-container">
+          <form class="GCDform" (change)="GCDCalcuator(number1.value,number2.value)">
+            <mat-form-field>
+              <input matInput type="number" #number1 required>
+              <mat-placeholder class="placeholder">First Integer:</mat-placeholder>
+            </mat-form-field>
+            <mat-form-field>
+              <input number matInput type="number" #number2 required>
+              <mat-placeholder class="placeholder">Second Integer:</mat-placeholder>
+            </mat-form-field>
+          </form>
+          <br>
+          <div *ngIf="missValue">
+            <span style="color: red; font-size: 17px">*</span>
+            <span style="color: white; font-size: 15px"> Please enter Numbers / Unsigned Numbers</span>
+          </div>
+          <div class="result" *ngIf="result">Result:<br> GCD:{{ GCDAnswer }} ,u:{{ GCDu }} ,v: {{ GCDv }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <iframe width="100%" height="650px" frameborder="0" src="http://yanivsu.speedtestcustom.com"></iframe>
 </div>
+
 
 
 
