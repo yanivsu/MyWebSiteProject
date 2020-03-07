@@ -169,7 +169,7 @@
     <div *ngIf="speedTest" class="container grid-container">
       <iframe width="100%" height="650px" frameborder="0" src="https://yanivsu.speedtestcustom.com"></iframe>
     </div>
-    <div class="container calculator"><br>
+    <div class="container calculator" *ngIf="calculator"><br>
       <form name="form">
         <input class="textview" value="{{this.calculatrString}}">
       </form>
