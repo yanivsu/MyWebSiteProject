@@ -17,6 +17,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {PdfViewerModule} from 'ng2-pdf-viewer';
 import {MatButtonModule} from '@angular/material/button';
 import { ClockComponent } from './clock/clock.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ClockComponent } from './clock/clock.component';
     MatTooltipModule,
     MatInputModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

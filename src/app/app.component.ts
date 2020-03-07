@@ -10,12 +10,14 @@ export class AppComponent {
   missValue = false;
   gcdCal = false;
   speedTest = false;
+  calculator = false;
   whereAmI = 0;
   result = false;
   GCDAnswer = 0;
   GCDu = -1;
   GCDv = 0;
   scrollNumber: number;
+  calculationNumber = 0;
   imagesLotemWeb = ['https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Admin%20User.jpg',
     'https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Admin%20User%20-%20Order%20Handler.jpg',
     'https://raw.githubusercontent.com/yanivsu/Lotems_Store/master/Project%20Img/Admin%20User%20-%20Edit%20Item.jpg',
@@ -27,6 +29,7 @@ export class AppComponent {
   '../assets/HomePage.jpg',
   '../assets/Countires.jpg',
   '../assets/IMG.jpg'];
+  calculatrString = '';
   cv = '../assets/CV.pdf';
   // When we scroll down the page
   @HostListener('window:scroll', [])
@@ -91,5 +94,21 @@ export class AppComponent {
       this.GCDu = signX * x;
       this.GCDv = signY * y;
     }
+  }
+
+  calculatorInsertFunction(value) {
+    this.calculatrString += value.toString();
+  }
+  calculatorEqualFunction() {
+    let exp = this.calculatrString;
+    if (exp[0] === '*' || exp[0] === '/' || exp[0] === '+' || exp[0] === '-') {
+      this.calculatrString = 'Error';
+    } else if (exp) {
+      // tslint:disable-next-line:no-eval
+      this.calculatrString = eval(exp);
+    }
+  }
+  calculatorDelFunction() {
+    this.calculatrString = this.calculatrString.substring(0, this.calculatrString.length - 1);
   }
 }
